@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --negro: #121212;
+    --gris: #9d9d9d;
+    --blanco: #F0F0F0;
+    --naranja: #FF6A2A;
+    --naranja-oscuro: #C54B1C;
+
+    --font: "Outfit", sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--negro);
+    font-family: var(--font);
+    color: var(--gris);
+}
