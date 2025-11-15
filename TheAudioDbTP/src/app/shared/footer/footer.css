@@ -1,0 +1,15 @@
+footer {
+    background-color: black !important;
+    color: var(--blanco) !important;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: var(--gris);
+    font-size: 12px;
+    align-self: self-end;
+    margin: 0 auto;
+}
