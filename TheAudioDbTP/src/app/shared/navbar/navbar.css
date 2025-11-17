@@ -12,15 +12,67 @@ nav.navbar {
     color: var(--naranja);
 }
 
-img {
-    margin: 0 50px;
-    width: 110px;
+span.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23F0F0F0' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
+img {
+    width: 70px;
+}
 
+a {
+    text-decoration: none;
+}
 
+#theAudioAtlas {
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--gris);
+    margin-right: 80px;
+}
+
+#theAudioAtlas span {
+    font-weight: 700;
+    color: var(--blanco);
+}
+
+.navbar-collapse {
+    text-align: center;
+}
+
+input.form-control {
+    width: 30vw;
+    background-color: transparent;
+    border: 1px solid var(--gris);
+    color: var(--blanco);
+}
+
+.form-control:focus {
+    border-color: var(--naranja-oscuro);
+    outline: none;
+    box-shadow: none;
+}
+
+input.form-control::placeholder {
+    color: var(--gris);
+}
+
+.btn {
+    border: none;
+    background-color: var(--naranja-oscuro);
+    color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
 
 @media screen and (max-width: 992px) {
+    .div-inicio-logo {
+        margin: 0 auto;
+    }
+
     ul {
         display: flex;
         flex-direction: column;
@@ -30,5 +82,14 @@ img {
 
     img {
         margin: 0 auto;
+    }
+
+    #theAudioAtlas {
+        font-size: 26px;
+        align-self: center;
+    }
+
+    input.form-control {
+        width: 100%;
     }
 }

@@ -1,0 +1,83 @@
+section:first-of-type {
+    background-image: url(../../../../public/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+section h1,
+section p {
+    color: var(--blanco);
+    margin-left: 5rem;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h1 span {
+    color: var(--naranja);
+}
+
+p {
+    font-size: 28px;
+}
+
+
+@media (max-width: 1080px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    section h1,
+    section p {
+        margin-left: 2rem;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    section:first-of-type {
+        height: 80vh;
+    }
+
+    section h1,
+    section p {
+        margin-left: 1rem;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    section:first-of-type {}
+}
+
+
+
+@media (max-width: 375px) {}
