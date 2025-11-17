@@ -6,10 +6,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a href="/inicio">
+        <div class="div-inicio-logo">
+            <a href="/inicio" id="theAudioAtlas">
                 <img src="/logo.png" alt="logo">
+                TheAudio<span>Atlas</span>
             </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -26,8 +30,9 @@
             </ul>
 
             <form class="d-flex" role="search" (ngSubmit)="search()">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm" [(ngModel)]="searchTerm" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
+                    name="searchTerm" [(ngModel)]="searchTerm" />
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
         </div>
     </div>
