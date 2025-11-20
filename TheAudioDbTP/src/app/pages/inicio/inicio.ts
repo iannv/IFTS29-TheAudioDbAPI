@@ -56,5 +56,17 @@ export class Inicio implements OnInit {
     this.trackService.getTrackTop2().subscribe((track) => {
       this.listaTracks.push(track.track[0]);
     });
+
+    this.trackService.getTrackTop3().subscribe((track) => {
+      this.listaTracks.push(track.track[0]);
+    });
+
+    this.trackService.getTrackTop4().subscribe((track) => {
+      this.listaTracks.push(track.track[0]);
+    });
+
+    this.trackService.getTrackTop5().subscribe((track) => {
+      this.listaTracks.push(track.track[0]);
+    });
   }
 }
