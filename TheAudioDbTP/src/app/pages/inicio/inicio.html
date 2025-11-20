@@ -9,7 +9,7 @@
     <div>
         <h2>Artistas destacados</h2>
         <p class="section-p">Haz clic en el artista para conocerlo mejor</p>
-        <article>
+        <article id="articleArtistas">
             @for (artista of listaArtistas; track $index) {
             <div>
                 <!-- Cambiar por la ruta del id del artista -->
@@ -25,10 +25,22 @@
     <div>
         <h2>Canciones del momento</h2>
         <p class="section-p">Las canciones que más están sonando en este momento a nivel global</p>
-        <article>
+        <article id="articleTracks">
             @for (track of listaTracks; track $index) {
-            <div>
-                <!-- <p>Track {{track.strGenre}}</p> -->
+            <!-- Sort por intMusicVidViews -->
+            <div class="div-tracks">
+                <div>
+                    <a href="{{track.strMusicVid}}" target="_blank" id="trackLink">
+                        <img src="{{track.strTrackThumb}}" alt="portada-track">
+                    </a>
+                </div>
+                <div>
+                    <h3>{{track.strTrack}}</h3>
+                    <a routerLink="">
+                        <p>{{track.strArtist}}</p>
+                    </a>
+                    <span>Vistas: {{track.intMusicVidViews}}</span>
+                </div>
             </div>
             }
         </article>

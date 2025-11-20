@@ -3,8 +3,13 @@ section:first-of-type {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 75vh;
+    height: 100vh;
     display: flex;
+
+    /* Parallax */
+    background-attachment: fixed;
+    mask-image: linear-gradient(to bottom, var(--negro) 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, var(--negro) 75%, transparent 100%);
 }
 
 section:first-of-type div {
@@ -28,6 +33,10 @@ h1 span {
     color: var(--naranja);
 }
 
+h3 {
+    font-size: 20px;
+}
+
 section {
     margin-bottom: 4rem;
 }
@@ -44,14 +53,14 @@ a {
 /* Top 5 artistas */
 h2,
 .section-p {
-    text-align: center;
+    margin-left: 4rem;
 }
 
 .section-p {
     color: var(--gris);
 }
 
-.section-destacados div {
+.section-destacados #articleArtistas div {
     margin: 0 auto;
     max-width: 80vw;
     margin-top: 1rem;
@@ -63,29 +72,135 @@ h2,
     flex-wrap: wrap;
 }
 
-.section-destacados article div {
+.section-destacados #articleArtistas div {
     padding: 1rem;
 }
 
-.section-destacados article div:hover {
+#articleArtistas div:hover {
     background-color: var(--negro-hover);
     border-radius: 8px;
     box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.107);
 }
 
-.section-destacados article img {
+.section-destacados>div:first-of-type img:first-of-type {
     width: 200px;
-    border-radius: 100%;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.section-destacados article p {
+.section-destacados #articleArtistas p {
     font-size: 18px;
     font-weight: 600;
     margin-top: 1rem;
     margin-left: 1rem;
 }
 
+.section-destacados>div:last-of-type {
+    background-color: black;
+    mask-image: linear-gradient(to top, var(--negro) 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, var(--negro) 75%, transparent 100%);
+}
+
+/* Tracks */
+.div-tracks {
+    display: flex;
+    padding: 0.5rem;
+}
+
+#articleTracks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    width: 90vw;
+}
+
+#articleTracks div {
+    background-color: var(--negro-hover);
+}
+
+#articleTracks img {
+    width: 80px;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+#trackLink {
+    position: relative;
+    display: inline-block;
+}
+
+#trackLink:hover img {
+    filter: brightness(0.3);
+    transition: .3s ease;
+}
+
+#trackLink::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-image: url(../../../assets/play.png);
+    background-size: cover;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+#trackLink:hover::after {
+    opacity: 1;
+}
+
+#articleTracks h3,
+#articleTracks p,
+#articleTracks span {
+    margin-left: 1rem;
+    margin-bottom: 0;
+}
+
+#articleTracks p {
+    font-size: 16px;
+    font-weight: 200;
+    padding: 0;
+}
+
+#articleTracks p:hover {
+    text-decoration: underline;
+}
+
+#articleTracks span {
+    font-weight: 300;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+
+/* Efecto banner desvanecer */
+.section-top::after {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom, transparent, var(--negro));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.section-top>div {
+    position: relative;
+    z-index: 3;
+}
+
+.section-destacados {
+    margin-top: -160px;
+    position: relative;
+    z-index: 5;
+}
 
 
 /* QUERIES */
@@ -96,6 +211,10 @@ h2,
 
     .section-top p {
         font-size: 28px;
+    }
+
+    #articleTracks {
+        width: 80vw;
     }
 }
 
@@ -113,6 +232,15 @@ h2,
         margin-left: 2rem;
         margin-right: 2rem;
     }
+
+    .section-destacados>div:first-of-type img:first-of-type {
+        width: 150px;
+    }
+
+    #articleTracks {
+        margin: auto;
+        margin-top: 2rem;
+    }
 }
 
 
@@ -128,13 +256,18 @@ h2,
         margin-left: 1rem;
         margin-right: 1rem;
     }
+
+    h2,
+    .section-p {
+        margin-left: 0;
+        text-align: center;
+    }
+
 }
 
 
 
-@media (max-width: 480px) {
-    section:first-of-type {}
-}
+@media (max-width: 480px) {}
 
 
 
