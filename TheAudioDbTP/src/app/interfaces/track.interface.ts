@@ -1,0 +1,60 @@
+export interface TrackResponse {
+    track: Track[];
+}
+
+export interface Track {
+  idTrack: string;
+  idAlbum: string;
+  idArtist: string;
+  idLyric: string;
+  idIMVDB: string;
+  strTrack: string;
+  strAlbum: string;
+  strArtist: string;
+  strArtistAlternate: string | null;
+  intCD: string | null;
+  intDuration: string;
+  strGenre: string;
+  strMood: string;
+  strStyle: string;
+  strTheme: string;
+  strDescriptionEN: string;
+  strDescriptionDE: string | null;
+  strDescriptionFR: string | null;
+  strDescriptionCN: string | null;
+  strDescriptionIT: string | null;
+  strDescriptionJP: string | null;
+  strDescriptionRU: string | null;
+  strDescriptionES: string | null;
+  strDescriptionPT: string | null;
+  strDescriptionSE: string | null;
+  strDescriptionNL: string | null;
+  strDescriptionHU: string | null;
+  strDescriptionNO: string | null;
+  strDescriptionIL: string | null;
+  strDescriptionPL: string | null;
+  strTrackThumb: string;
+  strTrack3DCase: string | null;
+  strTrackLyrics: string;
+  strMusicVid: string;
+  strMusicVidDirector: string;
+  strMusicVidCompany: string;
+  strMusicVidScreen1: string;
+  strMusicVidScreen2: string;
+  strMusicVidScreen3: string;
+  intMusicVidViews: string;
+  intMusicVidLikes: string;
+  intMusicVidDislikes: string;
+  intMusicVidFavorites: string;
+  intMusicVidComments: string;
+  intTrackNumber: string;
+  intLoved: string;
+  intScore: string;
+  intScoreVotes: string;
+  intTotalListeners: string;
+  intTotalPlays: string;
+  strMusicBrainzID: string;
+  strMusicBrainzAlbumID: string;
+  strMusicBrainzArtistID: string;
+  strLocked: string;
+}

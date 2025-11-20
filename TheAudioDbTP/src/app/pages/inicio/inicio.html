@@ -11,10 +11,13 @@
         <p class="section-p">Haz clic en el artista para conocerlo mejor</p>
         <article>
             @for (artista of listaArtistas; track $index) {
-                <div>
+            <div>
+                <!-- Cambiar por la ruta del id del artista -->
+                <a routerLink="/artistas">
                     <img src="{{artista.strArtistThumb}}" alt="{{artista.strArtist}}">
                     <p>{{artista.strArtist}}</p>
-                </div>
+                </a>
+            </div>
             }
         </article>
     </div>
@@ -22,5 +25,12 @@
     <div>
         <h2>Canciones del momento</h2>
         <p class="section-p">Las canciones que más están sonando en este momento a nivel global</p>
+        <article>
+            @for (track of listaTracks; track $index) {
+            <div>
+                <!-- <p>Track {{track.strGenre}}</p> -->
+            </div>
+            }
+        </article>
     </div>
 </section>
