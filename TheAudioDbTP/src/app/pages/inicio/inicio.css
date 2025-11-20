@@ -1,5 +1,5 @@
 section:first-of-type {
-    background-image: url(../../../../public/hero.jpg);
+    background-image: url(../../../../public/hero.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,15 +7,15 @@ section:first-of-type {
     display: flex;
 }
 
-section div {
+section:first-of-type div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
 }
 
-section h1,
-section p {
+.section-top h1,
+.section-top p {
     color: var(--blanco);
     margin-left: 5rem;
 }
@@ -28,17 +28,68 @@ h1 span {
     color: var(--naranja);
 }
 
-p {
+section {
+    margin-bottom: 4rem;
+}
+
+.section-top p {
     font-size: 28px;
 }
 
+/* Top 5 artistas */
+h2,
+.section-p {
+    text-align: center;
+}
 
+.section-p {
+    color: var(--gris);
+}
+
+.section-destacados div {
+    margin: 0 auto;
+    max-width: 80vw;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-destacados article {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section-destacados article div {
+    padding: 1rem;
+}
+
+.section-destacados article div:hover {
+    background-color: var(--negro-hover);
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.107);
+}
+
+.section-destacados article img {
+    width: 200px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.section-destacados article p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+
+
+/* QUERIES */
 @media (max-width: 1080px) {
     h1 {
         font-size: 40px;
     }
 
-    p {
+    .section-top p {
         font-size: 28px;
     }
 }
@@ -48,13 +99,14 @@ p {
         font-size: 30px;
     }
 
-    p {
+    .section-top p {
         font-size: 18px;
     }
 
-    section h1,
-    section p {
+    .section-top h1,
+    .section-top p {
         margin-left: 2rem;
+        margin-right: 2rem;
     }
 }
 
@@ -66,9 +118,10 @@ p {
         height: 80vh;
     }
 
-    section h1,
-    section p {
+    .section-top h1,
+    .section-top p {
         margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
