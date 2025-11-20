@@ -32,6 +32,11 @@ section {
     margin-bottom: 4rem;
 }
 
+a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
 .section-top p {
     font-size: 28px;
 }
