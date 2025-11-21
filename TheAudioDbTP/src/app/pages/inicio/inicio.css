@@ -96,10 +96,11 @@ h2,
 }
 
 .section-destacados>div:last-of-type {
-    background-color: black;
-    mask-image: linear-gradient(to top, var(--negro) 75%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, var(--negro) 75%, transparent 100%);
+    padding-top: 5rem;
+    background: linear-gradient(to bottom, var(--negro), black);
+    padding-bottom: 2rem;
 }
+
 
 /* Tracks */
 .div-tracks {
@@ -197,7 +198,7 @@ h2,
 }
 
 .section-destacados {
-    margin-top: -160px;
+    margin-top: -50px;
     position: relative;
     z-index: 5;
 }

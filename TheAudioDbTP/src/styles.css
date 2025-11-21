@@ -25,3 +25,7 @@ body {
     font-family: var(--font);
     color: var(--blanco);
 }
+
+.body-margin-top {
+    margin-top: 100px;
+}
