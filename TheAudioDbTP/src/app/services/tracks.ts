@@ -12,9 +12,9 @@ export class trackService {
 
   // Top tracks
   private apiUrlTop1 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=coldplay&t=fix_you';
-  private apiUrlTop2 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=metallica&t=enter_sandman';
+  private apiUrlTop2 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=nirvana&t=smells_like_teen_spirit';
   private apiUrlTop3 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=adele&t=rolling_in_the_deep';
-  private apiUrlTop4 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=u2&t=with_or_without_you';
+  private apiUrlTop4 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=maroon_5&t=sugar';
   private apiUrlTop5 = 'https://www.theaudiodb.com/api/v1/json/123/searchtrack.php?s=oasis&t=wonderwall';
 
   constructor(private http: HttpClient) {}

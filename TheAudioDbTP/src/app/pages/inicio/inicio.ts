@@ -51,22 +51,35 @@ export class Inicio implements OnInit {
   public obtenerTop5Tracks() {
     this.trackService.getTrackTop1().subscribe((track) => {
       this.listaTracks.push(track.track[0]);
+      this.ordenarTracks();
     });
 
     this.trackService.getTrackTop2().subscribe((track) => {
       this.listaTracks.push(track.track[0]);
+      this.ordenarTracks();
     });
 
     this.trackService.getTrackTop3().subscribe((track) => {
       this.listaTracks.push(track.track[0]);
+      this.ordenarTracks();
     });
 
     this.trackService.getTrackTop4().subscribe((track) => {
       this.listaTracks.push(track.track[0]);
+      this.ordenarTracks();
     });
 
     this.trackService.getTrackTop5().subscribe((track) => {
       this.listaTracks.push(track.track[0]);
+      this.ordenarTracks();
     });
+  }
+
+  private ordenarTracks() {
+    if (this.listaTracks.length === 5) {
+      this.listaTracks.sort(
+        (a, b) => Number(b.intMusicVidViews) - Number(a.intMusicVidViews)
+      );
+    }
   }
 }

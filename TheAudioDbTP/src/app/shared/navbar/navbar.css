@@ -2,6 +2,9 @@ nav.navbar {
     background-color: black !important;
     color: var(--blanco) !important;
     min-height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
 }
 
 .navbar a {
@@ -10,6 +13,15 @@ nav.navbar {
 
 .navbar a:hover {
     color: var(--naranja);
+}
+
+li {
+    padding: 4px;
+}
+
+.linkActive {
+    background-color: var(--negro-hover);
+    border-radius: 4px;
 }
 
 span.navbar-toggler-icon {
