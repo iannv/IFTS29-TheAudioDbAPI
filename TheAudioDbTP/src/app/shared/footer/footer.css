@@ -11,5 +11,18 @@ p {
     color: var(--gris);
     font-size: 12px;
     align-self: self-end;
-    margin: 0 auto;
+    margin: 1rem auto;
+}
+
+footer span {
+    cursor: pointer;
+    color: var(--blanco);
+}
+
+footer span:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: var(--blanco);
 }

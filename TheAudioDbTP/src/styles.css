@@ -42,6 +42,10 @@ body {
     color: var(--blanco);
 }
 
+.btn:active {
+    background-color: var(--naranja-oscuro) !important;
+}
+
 /* INPUTS */
 input.form-control {
     width: 30vw;
