@@ -59,7 +59,9 @@ h2,
 .section-p {
     color: var(--gris);
 }
-
+.section-destacados {
+    margin-bottom: 0;
+}
 .section-destacados #articleArtistas div {
     margin: 0 auto;
     max-width: 80vw;
@@ -101,6 +103,11 @@ h2,
     padding-bottom: 2rem;
 }
 
+#div-mas-escuchados-ulimos-lanzamientos {
+    display: flex;
+    gap: 4rem;
+}
+
 
 /* Tracks */
 .div-tracks {
@@ -114,7 +121,7 @@ h2,
     gap: 10px;
     margin-top: 2rem;
     margin-left: 4rem;
-    width: 90vw;
+    width: 40vw;
 }
 
 #articleTracks div {
@@ -162,13 +169,15 @@ h2,
     margin-bottom: 0;
 }
 
-#articleTracks p {
+#articleTracks p,
+#articleTrendings p {
     font-size: 16px;
     font-weight: 200;
     padding: 0;
 }
 
-#articleTracks p:hover {
+#articleTracks p:hover,
+#articleTrendings p:hover {
     text-decoration: underline;
 }
 
@@ -176,6 +185,67 @@ h2,
     font-weight: 300;
     color: var(--gris);
     font-size: 12px;
+}
+
+
+/* Últimos lanzamientos */
+#articleTrendings {
+    gap: 0.5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+
+.div-trendings {
+    max-width: 200px;
+}
+
+.div-trendings div {
+    width: 200px;
+    padding: 15px 15px 0px 15px;
+    cursor: pointer;
+}
+
+#articleTrendings div:hover {
+    background-color: var(--negro-hover);
+    border-radius: 8px;
+}
+
+#articleTrendings img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.div-trendings {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section bottom explorar */
+.section-bottom {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.section-bottom video {
+    /* background-color: red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.section-bottom .btn-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -205,6 +275,17 @@ h2,
 
 
 /* QUERIES */
+@media (max-width: 1300px) {
+    .div-trendings div {
+        width: 170px;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos {
+        gap: 0rem;
+    }
+}
+
+
 @media (max-width: 1080px) {
     h1 {
         font-size: 40px;
@@ -216,6 +297,20 @@ h2,
 
     #articleTracks {
         width: 80vw;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    #articleTrendings {
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .div-trendings div {
+        width: 160px;
     }
 }
 

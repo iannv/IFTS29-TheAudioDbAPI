@@ -4,6 +4,8 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Artist, ArtistResponse } from '../../interfaces/artist.interface';
 import { trackService } from '../../services/tracks';
 import { Track } from '../../interfaces/track.interface';
+import { TrendingService } from '../../services/trending';
+import { Trending } from '../../interfaces/trending.interface';
 
 @Component({
   selector: 'app-inicio',
@@ -15,15 +17,20 @@ export class Inicio implements OnInit {
   constructor(
     private artistaService: ArtistaService,
     private trackService: trackService,
+    private trendingService: TrendingService,
     private route: ActivatedRoute
   ) {}
 
   public listaArtistas: Artist[] = [];
   public listaTracks: Track[] = [];
+  public listaTrending: Trending[] = [];
+  public listaTrendingSingles: Trending[] = [];
 
   ngOnInit(): void {
     this.obtenerTop5Artistas();
     this.obtenerTop5Tracks();
+    this.getLanzamientos();
+    this.getLanzamientosSingles();
   }
 
   public obtenerTop5Artistas() {
@@ -81,5 +88,17 @@ export class Inicio implements OnInit {
         (a, b) => Number(b.intMusicVidViews) - Number(a.intMusicVidViews)
       );
     }
+  }
+
+  private getLanzamientos() {
+    this.trendingService.getTrendings().subscribe((response) => {
+      this.listaTrending = response.trending;
+    })
+  }
+
+  private getLanzamientosSingles() {
+    this.trendingService.getTrendingsSingle().subscribe((single) => {
+      this.listaTrendingSingles = single.trending;
+    })
   }
 }
