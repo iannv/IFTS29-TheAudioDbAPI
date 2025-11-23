@@ -29,3 +29,33 @@ body {
 .body-margin-top {
     margin-top: 100px;
 }
+
+/* BUTTONS */
+.btn {
+    border: none;
+    background-color: var(--naranja-oscuro);
+    color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
+
+/* INPUTS */
+input.form-control {
+    width: 30vw;
+    background-color: transparent !important;
+    border: 1px solid var(--gris);
+    color: var(--blanco) !important;
+}
+
+.form-control:focus {
+    border-color: var(--naranja-oscuro);
+    outline: none;
+    box-shadow: none;
+}
+
+input.form-control::placeholder {
+    color: var(--gris);
+}

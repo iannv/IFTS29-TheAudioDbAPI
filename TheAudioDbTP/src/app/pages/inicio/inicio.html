@@ -22,51 +22,79 @@
         </article>
     </div>
 
-    <div>
-        <h2>Canciones más escuchadas</h2>
-        <p class="section-p">Las canciones más escuchadas nivel global</p>
-        <article id="articleTracks">
-            @for (track of listaTracks; track $index) {
-            <!-- Sort por intMusicVidViews -->
-            <div class="div-tracks">
-                <div>
-                    <a href="{{track.strMusicVid}}" target="_blank" id="trackLink">
-                        <img src="{{track.strTrackThumb}}" alt="portada-track">
-                    </a>
+    <div id="div-mas-escuchados-ulimos-lanzamientos">
+        <div>
+            <h2>Canciones más escuchadas</h2>
+            <p class="section-p">Las canciones más escuchadas nivel global</p>
+            <article id="articleTracks">
+                @for (track of listaTracks; track $index) {
+                <div class="div-tracks">
+                    <div>
+                        <a href="{{track.strMusicVid}}" target="_blank" id="trackLink">
+                            <img src="{{track.strTrackThumb}}" alt="portada-track">
+                        </a>
+                    </div>
+                    <div>
+                        <h3>{{track.strTrack}}</h3>
+                        <a routerLink="">
+                            <p>{{track.strArtist}}</p>
+                        </a>
+                        <span>Vistas: {{track.intMusicVidViews}}</span>
+                    </div>
                 </div>
-                <div>
-                    <h3>{{track.strTrack}}</h3>
-                    <a routerLink="">
-                        <p>{{track.strArtist}}</p>
-                    </a>
-                    <span>Vistas: {{track.intMusicVidViews}}</span>
+                }
+            </article>
+        </div>
+
+
+
+        <div>
+            <h2>Últimos lanzamientos</h2>
+            <article id="articleTrendings">
+                @for (trending of listaTrending; track $index) {
+                <div class="div-trendings">
+                    <div>
+                        <a routerLink="" id="trendingLink">
+                            <img src="{{trending.strAlbumThumb}}" alt="{{trending.strAlbum}}">
+                        </a>
+                    </div>
+                    <div>
+                        <h3>{{trending.strAlbum}}</h3>
+                        <a routerLink="">
+                            <p>{{trending.strArtist}}</p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            }
-        </article>
+                }
 
-
-
-
-        <!-- <h2>Últimos lanzamientos</h2>
-        <article id="articleAlbumes">
-            @for (track of listaTracks; track $index) {
-            <div class="div-tracks">
-                <div>
-                    <a href="{{track.strMusicVid}}" target="_blank" id="trackLink">
-                        <img src="{{track.strTrackThumb}}" alt="portada-track">
-                    </a>
+                <!-- Singles -->
+                <!-- @for (trendingSingle of listaTrendingSingles; track $index) {
+                <div class="div-tracks">
+                    <div>
+                        <a routerLink="" id="trendingLink">
+                            <img src="{{trendingSingle.strTrackThumb}}" alt="{{trendingSingle.strAlbum}}">
+                        </a>
+                    </div>
+                    <div>
+                        <h3>{{trendingSingle.strAlbum}}</h3>
+                        <a routerLink="">
+                            <p>{{trendingSingle.strArtist}}</p>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <h3>{{track.strTrack}}</h3>
-                    <a routerLink="">
-                        <p>{{track.strArtist}}</p>
-                    </a>
-                    <span>Vistas: {{track.intMusicVidViews}}</span>
-                </div>
-            </div>
-            }
-        </article> -->
+                } -->
+            </article>
 
+        </div>
+    </div>
+</section>
+
+<section class="section-bottom">
+    <video autoplay muted loop playsinline>
+        <source src="../../../assets/video.mp4" type="video-mp4">
+    </video>
+
+    <div class="btn-content">
+        <button class="btn">Explorar</button>
     </div>
 </section>

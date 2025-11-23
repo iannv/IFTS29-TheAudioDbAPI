@@ -52,34 +52,10 @@ a {
     text-align: center;
 }
 
-input.form-control {
-    width: 30vw;
-    background-color: transparent;
-    border: 1px solid var(--gris);
-    color: var(--blanco);
-}
 
-.form-control:focus {
-    border-color: var(--naranja-oscuro);
-    outline: none;
-    box-shadow: none;
-}
 
-input.form-control::placeholder {
-    color: var(--gris);
-}
 
-.btn {
-    border: none;
-    background-color: var(--naranja-oscuro);
-    color: var(--blanco);
-}
-
-.btn:hover {
-    background-color: var(--naranja);
-    color: var(--blanco);
-}
-
+/* Queries */
 @media screen and (max-width: 992px) {
     .div-inicio-logo {
         margin: 0 auto;
