@@ -59,9 +59,11 @@ h2,
 .section-p {
     color: var(--gris);
 }
+
 .section-destacados {
     margin-bottom: 0;
 }
+
 .section-destacados #articleArtistas div {
     margin: 0 auto;
     max-width: 80vw;
@@ -100,12 +102,13 @@ h2,
 .section-destacados>div:last-of-type {
     padding-top: 5rem;
     background: linear-gradient(to bottom, var(--negro), black);
-    padding-bottom: 2rem;
+    padding-bottom: 5rem;
 }
 
 #div-mas-escuchados-ulimos-lanzamientos {
     display: flex;
     gap: 4rem;
+    background-color: green;
 }
 
 
@@ -222,30 +225,45 @@ h2,
 
 /* Section bottom explorar */
 .section-bottom {
-    position: relative;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
     width: 100%;
-    height: 300px;
+    height: 450px;
+    position: relative;
     overflow: hidden;
 }
 
 .section-bottom video {
-    /* background-color: red; */
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: -1;
+    filter: brightness(0.4);
 }
 
-.section-bottom .btn-content {
+.btn-content {
     position: relative;
-    z-index: 1;
-    height: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 200px;
+}
+
+.btn-content button {
+    width: 400px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 24px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.btn-content img {
+    width: 45px;
+    margin-right: 1rem;
 }
 
 
@@ -312,6 +330,23 @@ h2,
     .div-trendings div {
         width: 160px;
     }
+
+    .section-bottom {
+        height: 400px;
+    }
+
+    .btn-content {
+        margin-top: 180px;
+    }
+
+    .btn-content button {
+        width: 350px;
+        font-size: 20px;
+    }
+
+    .btn-content img {
+        width: 40px;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -329,13 +364,29 @@ h2,
         margin-right: 2rem;
     }
 
+    .section-destacados>div:last-of-type {
+        padding-bottom: 2rem;
+    }
+
     .section-destacados>div:first-of-type img:first-of-type {
         width: 150px;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos {
+        padding-top: 0;
     }
 
     #articleTracks {
         margin: auto;
         margin-top: 2rem;
+    }
+
+    .section-bottom {
+        height: 300px;
+    }
+
+    .btn-content {
+        margin-top: 120px;
     }
 }
 
@@ -359,11 +410,35 @@ h2,
         text-align: center;
     }
 
+    .btn-content button {
+        width: 300px;
+        font-size: 18px;
+        height: 60px;
+    }
+
+    .btn-content img {
+        width: 35px;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos>div:last-of-type {
+        margin: 0 auto;
+    }
 }
 
 
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+    .section-destacados #articleArtistas div {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #articleTrendings {
+        margin: 0 auto;
+        margin-top: 2rem;
+        max-width: 50%;
+    }
+}
 
 
 

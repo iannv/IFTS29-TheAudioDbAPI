@@ -7,6 +7,13 @@ nav.navbar {
     z-index: 999;
 }
 
+.linkActive {
+    background-color: var(--negro-hover);
+    border-radius: 4px 4px 1px 1px;
+    border-bottom: 2px solid var(--naranja-oscuro);
+    transition: 0.5s ease;
+}
+
 .navbar a {
     color: var(--blanco);
 }
@@ -19,21 +26,16 @@ li {
     padding: 4px;
 }
 
-.linkActive {
-    background-color: var(--negro-hover);
-    border-radius: 4px;
-}
-
 span.navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23F0F0F0' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
-img {
-    width: 70px;
-}
-
 a {
     text-decoration: none;
+}
+
+img {
+    width: 70px;
 }
 
 #theAudioAtlas {
@@ -56,6 +58,16 @@ a {
 
 
 /* Queries */
+@media (max-width: 1100px) {
+    img {
+        width: 50px;
+    }
+
+    #theAudioAtlas {
+        font-size: 28px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     .div-inicio-logo {
         margin: 0 auto;

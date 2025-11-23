@@ -47,54 +47,37 @@
         </div>
 
 
-
         <div>
             <h2>Últimos lanzamientos</h2>
-            <article id="articleTrendings">
-                @for (trending of listaTrending; track $index) {
-                <div class="div-trendings">
-                    <div>
-                        <a routerLink="" id="trendingLink">
-                            <img src="{{trending.strAlbumThumb}}" alt="{{trending.strAlbum}}">
-                        </a>
+            <div id="div-articleTrendings">
+                <article id="articleTrendings">
+                    @for (trending of listaTrending; track $index) {
+                    <div class="div-trendings">
+                        <div>
+                            <a routerLink="" id="trendingLink">
+                                <img src="{{trending.strAlbumThumb}}" alt="{{trending.strAlbum}}">
+                            </a>
+                        </div>
+                        <div>
+                            <h3>{{trending.strAlbum}}</h3>
+                            <a routerLink="">
+                                <p>{{trending.strArtist}}</p>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <h3>{{trending.strAlbum}}</h3>
-                        <a routerLink="">
-                            <p>{{trending.strArtist}}</p>
-                        </a>
-                    </div>
-                </div>
-                }
-
-                <!-- Singles -->
-                <!-- @for (trendingSingle of listaTrendingSingles; track $index) {
-                <div class="div-tracks">
-                    <div>
-                        <a routerLink="" id="trendingLink">
-                            <img src="{{trendingSingle.strTrackThumb}}" alt="{{trendingSingle.strAlbum}}">
-                        </a>
-                    </div>
-                    <div>
-                        <h3>{{trendingSingle.strAlbum}}</h3>
-                        <a routerLink="">
-                            <p>{{trendingSingle.strArtist}}</p>
-                        </a>
-                    </div>
-                </div>
-                } -->
-            </article>
-
+                    }
+                </article>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="section-bottom">
-    <video autoplay muted loop playsinline>
-        <source src="../../../assets/video.mp4" type="video-mp4">
-    </video>
 
+<section class="section-bottom">
+    <video autoplay muted loop src="assets/video.mp4"></video>
     <div class="btn-content">
-        <button class="btn">Explorar</button>
+        <a routerLink="/artistas">
+            <button class="btn"><img src="assets/musica.png" alt="explorar-artistas">Descrubrí nuevos artistas</button>
+        </a>
     </div>
 </section>
