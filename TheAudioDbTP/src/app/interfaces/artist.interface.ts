@@ -54,3 +54,25 @@ export interface Artist {
   intCharted: string;
   strLocked: string;
 }
+
+export interface ArtistaMusicBrainz{
+   id: string;
+  type: string;
+  "type-id"?: string;
+  score: number;
+  "gender-id"?: string;
+  name: string;
+  "sort-name": string;
+  gender?: string;
+  country?: string;
+  tags?: { count: number;
+  name: string;}[];
+  image?: string;
+}
+
+export interface ArtistaMusicBrainzResponse {
+  created: string;
+  count: number;
+  offset: number;
+  artists: ArtistaMusicBrainz[];
+}

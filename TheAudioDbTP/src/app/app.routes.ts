@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Inicio } from './pages/inicio/inicio';
-import { ArtistaComponent } from './components/artista-component/artista-component';
-import { Artistas } from './pages/artistas/artistas';
-import { Albumes } from './pages/albumes/albumes';
+import { Inicio } from './pages/inicio/inicio.component';
+import { ArtistaDetalle } from './components/artista-detalle/artista-detalle.component';
+import { Artistas } from './pages/artistas/artistas.component';
+import { Albumes } from './pages/albumes/albumes.component';
 
 export const routes: Routes = [
   // Inicio
@@ -11,7 +11,7 @@ export const routes: Routes = [
 
   // Artista
   { path: 'artistas', component: Artistas },
-  { path: 'artista/:id', component: ArtistaComponent },
+  { path: 'artista/:id', component: ArtistaDetalle },
 
   // Albumes
   { path: 'albumes', component: Albumes },
