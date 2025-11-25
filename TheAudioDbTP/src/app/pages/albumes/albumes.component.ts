@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-albumes',
   imports: [],
-  templateUrl: './albumes.html',
-  styleUrl: './albumes.css',
+  templateUrl: './albumes.component.html',
+  styleUrl: './albumes.component.css',
 })
 export class Albumes {
 

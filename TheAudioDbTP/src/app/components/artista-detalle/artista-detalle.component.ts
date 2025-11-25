@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from '../../interfaces/artist.interface';
-import { ArtistaService } from '../../services/artista';
+import { ArtistaService } from '../../services/artista.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-artista-component',
+  selector: 'app-detalle-detalle',
   imports: [],
-  templateUrl: './artista-component.html',
-  styleUrl: './artista-component.css',
+  templateUrl: './artista-detalle.component.html',
+  styleUrl: './artista-detalle.component.css',
 })
-export class ArtistaComponent implements OnInit {
+export class ArtistaDetalle implements OnInit {
   artista!: Artist;
 
   constructor(private service: ArtistaService, private route: ActivatedRoute) {}

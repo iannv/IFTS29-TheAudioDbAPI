@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistaService } from '../../services/artista';
+import { ArtistaService } from '../../services/artista.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Artist, ArtistResponse } from '../../interfaces/artist.interface';
-import { trackService } from '../../services/tracks';
+import { trackService } from '../../services/tracks.service';
 import { Track } from '../../interfaces/track.interface';
-import { TrendingService } from '../../services/trending';
+import { TrendingService } from '../../services/trending.service';
 import { Trending } from '../../interfaces/trending.interface';
 
 @Component({
   selector: 'app-inicio',
   imports: [RouterLink],
-  templateUrl: './inicio.html',
-  styleUrl: './inicio.css',
+  templateUrl: './inicio.component.html',
+  styleUrl: './inicio.component.css',
 })
 export class Inicio implements OnInit {
   constructor(
