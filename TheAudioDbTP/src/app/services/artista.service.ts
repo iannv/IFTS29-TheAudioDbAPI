@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of, switchMap } from 'rxjs';
 import { Artist, ArtistaMusicBrainz, ArtistaMusicBrainzResponse, ArtistResponse } from '../interfaces/artist.interface';
 import { HttpClient } from '@angular/common/http';
+import {MusicVideo} from '../interfaces/MusicVideo';
 
 @Injectable({
   providedIn: 'root',
@@ -55,13 +56,13 @@ export class ArtistaService {
 
                 return {
                   ...artista,
-                  image: img, 
+                  image: img,
                 };
               }),
               catchError(() =>
                 of({
                   ...artista,
-                  image: null, 
+                  image: null,
                 })
               )
             )
@@ -93,5 +94,9 @@ export class ArtistaService {
     return this.http.get<ArtistResponse>(this.apiUrlArtista5);
   }
 
+
+  getVideoArtista(id: string):Observable<MusicVideo> {
+    return this.http.get<MusicVideo>('https://www.theaudiodb.com/api/v1/json/123/mvid.php?i=' + id);
+  }
 
 }

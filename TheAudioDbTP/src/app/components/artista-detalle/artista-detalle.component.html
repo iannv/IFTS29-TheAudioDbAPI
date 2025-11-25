@@ -21,8 +21,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
-            <h1>AGREGAR VIDEOCLIP</h1>
+        <div class="col-6 d-flex justify-content-center">
+            <youtube-player
+                *ngIf="video"
+                [videoId]="video"
+                [playerVars]="playerVars"
+                [width]="640"
+                [height]="360">
+            </youtube-player>
         </div>
     </div>
 </div>
