@@ -10,8 +10,8 @@ import { Trending } from '../../interfaces/trending.interface';
 @Component({
   selector: 'app-inicio',
   imports: [RouterLink],
-  templateUrl: './inicio.html',
-  styleUrl: './inicio.css',
+  templateUrl: './inicio.component.html',
+  styleUrl: './inicio.component.css',
 })
 export class Inicio implements OnInit {
   constructor(

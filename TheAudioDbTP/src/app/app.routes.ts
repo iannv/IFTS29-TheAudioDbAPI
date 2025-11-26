@@ -3,6 +3,8 @@ import { Inicio } from './pages/inicio/inicio.component';
 import { ArtistaComponent } from './components/artista-detalle/artista-detalle.component';
 import { Artistas } from './pages/artistas/artistas.component';
 import { Albumes } from './pages/albumes/albumes.component';
+import { NotFound } from './pages/not-found/not-found';
+
 
 export const routes: Routes = [
   // Inicio
@@ -16,4 +18,7 @@ export const routes: Routes = [
   // Albumes
   { path: 'albumes', component: Albumes },
   { path: 'albumes/:artistId/:albumId', component: Albumes },
+
+    // Not Found
+    { path: '**', component: NotFound },
 ];
