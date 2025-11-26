@@ -1,15 +1,13 @@
-
 <div class="top-tracks-container">
   <h3 class="text-white mb-3">Top 3 canciones</h3>
   <p *ngIf="top3.length === 0" class="text-warning">No se encontraron canciones para este artista.</p>
-  <div *ngFor="let track of top3" class="track-card">
+  <div *ngFor="let track of top3" class="track-card" (click)="verAlbum(track)">
+
     <h5 class="text-white">{{ track.strTrack }}</h5>
     <p class="text-secondary">Álbum: {{ track.strAlbum }}</p>
     <p class="text-secondary">Duración: {{ formatearDuracion(track.intDuration) }}</p>
-    
-    <img *ngIf="track.strTrackThumb"
-     [src]="track.strTrackThumb"
-     alt="Miniatura de {{ track.strTrack }}"
-     class="track-thumb">
+
+    <img *ngIf="track.strTrackThumb" [src]="track.strTrackThumb" alt="Miniatura de {{ track.strTrack }}"
+      class="track-thumb">
   </div>
 </div>
