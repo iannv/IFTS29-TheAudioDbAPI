@@ -10,7 +10,7 @@
     ></app-album-component>
   </ng-container>
 
-  <!-- Vista exploratoria de álbumes (sin params) -->
+  <!-- Vista selección de álbumes -->
   <section *ngIf="!hasRouteParams" class="albums-explore">
     <header class="albums-explore__header">
       <div>
@@ -35,6 +35,55 @@
       class="albums-grid"
     >
       @for (item of trendingAlbums; track $index) {
+        <article class="album-card-mini">
+          <a
+            [routerLink]="['/albumes', item.idArtist, item.idAlbum]"
+            class="album-card-mini__thumb"
+          >
+            <img
+              [src]="item.strAlbumThumb"
+              [alt]="item.strAlbum"
+              loading="lazy"
+            />
+          </a>
+          <div class="album-card-mini__body">
+            <h3>
+              <a [routerLink]="['/albumes', item.idArtist, item.idAlbum]">
+                {{ item.strAlbum }}
+              </a>
+            </h3>
+            <p class="album-card-mini__artist">{{ item.strArtist }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+    <!-- Vista más amados de álbumes -->
+  <section *ngIf="!hasRouteParams" class="albums-explore">
+    <header class="albums-explore__header">
+      <div>
+        <h2>Los más votados de la historia</h2>
+        <p>Los álbumes favoritos de la comunidad de TheAudioDB.</p>
+      </div>
+    </header>
+
+    <div *ngIf="isLoadingMostLoved" class="albums-explore__state">
+      Cargando los más amados...
+    </div>
+
+    <div
+      *ngIf="!isLoadingMostLoved && mostLovedAlbums.length === 0"
+      class="albums-explore__state albums-explore__state--muted"
+    >
+      No se pudo cargar la lista de favoritos.
+    </div>
+
+    <div
+      *ngIf="!isLoadingMostLoved && mostLovedAlbums.length > 0"
+      class="albums-grid"
+    >
+      @for (item of mostLovedAlbums; track $index) {
         <article class="album-card-mini">
           <a
             [routerLink]="['/albumes', item.idArtist, item.idAlbum]"

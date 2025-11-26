@@ -7,7 +7,9 @@ import { Album } from '../../interfaces/album.interface';
 import { Track } from '../../interfaces/track.interface';
 import { AlbumComponent } from '../../components/album-component/album-component';
 import { Trending } from '../../interfaces/trending.interface';
+import { MostLoved } from '../../interfaces/mostLoved.interfaces';
 import { TrendingService } from '../../services/trending';
+import { MostLovedService } from '../../services/mostLoved';
 
 @Component({
   selector: 'app-albumes',
@@ -27,11 +29,15 @@ export class Albumes implements OnInit, OnDestroy {
   public trendingAlbums: Trending[] = [];
   public isLoadingTrending = false;
 
+  public mostLovedAlbums: MostLoved[] = [];
+  public isLoadingMostLoved = false;
+
   private readonly destroy$ = new Subject<void>();
 
   constructor(
     private readonly albumesService: AlbumesService,
     private readonly trendingService: TrendingService,
+    private readonly mostLovedService: MostLovedService,
     private readonly route: ActivatedRoute
   ) {}
 
@@ -45,7 +51,8 @@ export class Albumes implements OnInit, OnDestroy {
         this.album = undefined;
         this.tracks = [];
         this.albumErrorMessage = '';
-        this.loadTrendingAlbumsRandom();
+        this.loadTrendingAlbums();
+        this.loadMostLovedAlbums();
         return;
       }
 
@@ -102,8 +109,7 @@ export class Albumes implements OnInit, OnDestroy {
     });
   }
 
-  private loadTrendingAlbumsRandom() {
-    // evitar recargar si ya tenemos datos
+  private loadTrendingAlbums() {
     if (this.trendingAlbums.length > 0) {
       return;
     }
@@ -112,15 +118,31 @@ export class Albumes implements OnInit, OnDestroy {
 
     this.trendingService.getTrendings().subscribe({
       next: (response) => {
-        const base = response?.trending ?? [];
-        // mezcla simple y selección de un subconjunto
-        const shuffled = [...base].sort(() => Math.random() - 0.5);
-        this.trendingAlbums = shuffled.slice(0, 12);
+        this.trendingAlbums = response?.trending ?? [];
         this.isLoadingTrending = false;
       },
       error: () => {
         this.trendingAlbums = [];
         this.isLoadingTrending = false;
+      },
+    });
+  }
+
+  private loadMostLovedAlbums() {
+    if (this.mostLovedAlbums.length > 0) {
+      return;
+    }
+
+    this.isLoadingMostLoved = true;
+
+    this.mostLovedService.getMostLoved().subscribe({
+      next: (response) => {
+        this.mostLovedAlbums = response?.mostLoved ?? [];
+        this.isLoadingMostLoved = false;
+      },
+      error: () => {
+        this.mostLovedAlbums = [];
+        this.isLoadingMostLoved = false;
       },
     });
   }

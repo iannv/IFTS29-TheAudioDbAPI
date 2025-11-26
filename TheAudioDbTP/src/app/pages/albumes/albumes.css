@@ -46,9 +46,11 @@
 
 .albums-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem;
   justify-content: center;
+  max-width: 1100px;
 }
 
 .album-card-mini {
@@ -60,6 +62,7 @@
   flex-direction: column;
   margin: 0 auto; 
   width: 100%;
+  max-width: 300px;
 }
 
 .album-card-mini__thumb img {
@@ -93,3 +96,8 @@
   color: #9ca3af;
 }
 
+@media (max-width: 768px) {
+  .album-card-mini {
+    max-width: 400px;
+  }
+}
