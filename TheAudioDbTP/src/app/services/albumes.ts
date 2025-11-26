@@ -23,9 +23,4 @@ export class AlbumesService {
   getTracksByAlbumId(albumId: string): Observable<TrackResponse> {
     return this.http.get<TrackResponse>(`${this.apiBase}/track.php?m=${albumId}`);
   }
-
-  buscarAlbumPorNombre(nombreAlbum: string): Observable<AlbumResponse> {
-    // La API usa 'searchalbum.php?a=' para buscar por nombre de álbum
-    return this.http.get<AlbumResponse>(`${this.apiBase}/searchalbum.php?a=${nombreAlbum}`);
-  }
 }

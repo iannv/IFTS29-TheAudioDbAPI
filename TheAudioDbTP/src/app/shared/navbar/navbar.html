@@ -30,24 +30,23 @@
             </ul>
 
             <form class="d-flex align-items-center" role="search" (ngSubmit)="search()">
-                <div class="search-radios me-2">
-                    <label class="radio-option" [class.selected]="searchType === 'artist'">
-                        <input type="radio" name="searchType" [(ngModel)]="searchType" value="artist">
-                        Artista
-                    </label>
-                    <label class="radio-option" [class.selected]="searchType === 'album'">
-                        <input type="radio" name="searchType" [(ngModel)]="searchType" value="album">
-                        Álbum
-                    </label>
-                </div>
-
-                <input 
-                    class="form-control me-2" 
-                    type="search" 
-                    [placeholder]="searchType === 'artist' ? 'Buscar artista...' : 'Buscar álbum...'" 
-                    name="searchTerm" 
-                    [(ngModel)]="searchTerm" 
-                />
+    
+                <div class="input-wrapper me-2">
+                    <input 
+                        class="form-control" 
+                        type="search" 
+                        placeholder="Buscar artista..." 
+                        aria-label="Search"
+                        name="searchTerm" 
+                        [(ngModel)]="searchTerm"
+                        (input)="limpiarError()" 
+                    />
+                    
+                    @if (errorMessage) {
+                        <div class="search-error">{{ errorMessage }}</div>
+                    }
+                    </div>
+            
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
         </div>

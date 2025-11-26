@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ArtistaService } from '../../services/artista';
-import { AlbumesService } from '../../services/albumes';
 import {ArtistResponse} from '../../interfaces/artist.interface';
 import { AlbumResponse } from '../../interfaces/album.interface';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
@@ -15,10 +14,9 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Navbar {
   searchTerm: string = '';
-  searchType: 'artist' | 'album' = 'artist';
+  errorMessage: string = '';
 
   constructor(private artistaService: ArtistaService,
-    private albumesService: AlbumesService,
     private router: Router) {}
 
   search(): void {
@@ -26,32 +24,31 @@ export class Navbar {
       return;
     }
 
-    if (this.searchType === 'artist') {
-      // *** BÚSQUEDA DE ARTISTA ***
-      this.artistaService.buscarArtista(this.searchTerm).subscribe({
-        next: (response: ArtistResponse) => {
-          if (response.artists && response.artists.length > 0) {
-            this.router.navigate(['/artista', response.artists[0].idArtist]);
-          } else {
-            console.log('No se encontró el artista');
-          }
-        },
-        error: (err) => console.error(err)
-      });
+    this.errorMessage = '';
+  
+    console.log("Buscando artista:", this.searchTerm);
+  
+    this.artistaService.buscarArtista(this.searchTerm).subscribe({
+      next: (response: ArtistResponse) => {
+        if (response.artists && response.artists.length > 0) {
+          const id = response.artists[0].idArtist;
+          this.router.navigate(['/artista', id]);
+          
+          this.searchTerm = ''; 
+        } else {
+          console.log('No se encontró el artista');
+          this.errorMessage = 'No encontramos ningún artista con ese nombre.';
+        }
+      },
+      error: (err) => {
+        console.error('Error al conectar con la API:', err);
+      }
+    });
+  }
 
-    } else {
-      // *** BÚSQUEDA DE ÁLBUM ***
-      this.albumesService.buscarAlbumPorNombre(this.searchTerm).subscribe({
-        next: (response: AlbumResponse) => {
-          if (response.album && response.album.length > 0) {
-            const albumEncontrado = response.album[0];
-            this.router.navigate(['/albumes', albumEncontrado.idArtist, albumEncontrado.idAlbum]);
-          } else {
-            console.log('No se encontró el álbum');
-          }
-        },
-        error: (err) => console.error(err)
-      });
+  limpiarError(): void {
+    if (this.errorMessage) {
+      this.errorMessage = '';
     }
   }
 }
