@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { AlbumesService } from '../../services/albumes';
+import { AlbumesService } from '../../services/albumes.service';
 import { Album } from '../../interfaces/album.interface';
 import { Track } from '../../interfaces/track.interface';
-import { AlbumComponent } from '../../components/album-component/album-component';
+import { AlbumComponent } from '../../components/album-detalle/album-detalle.component';
 import { Trending } from '../../interfaces/trending.interface';
 import { MostLoved } from '../../interfaces/mostLoved.interfaces';
-import { TrendingService } from '../../services/trending';
-import { MostLovedService } from '../../services/mostLoved';
+import { TrendingService } from '../../services/trending.service';
+import { MostLovedService } from '../../services/mostLoved.service';
 
 @Component({
   selector: 'app-albumes',

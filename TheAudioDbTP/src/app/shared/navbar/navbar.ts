@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ArtistaService } from '../../services/artista';
+import { ArtistaService } from '../../services/artista.service';
 import {ArtistResponse} from '../../interfaces/artist.interface';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
