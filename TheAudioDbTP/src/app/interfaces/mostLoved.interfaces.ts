@@ -1,8 +1,8 @@
-export interface AlbumResponse {
-  album: Album[];
+export interface MostLovedResponse {
+  mostLoved: MostLoved[];
 }
 
-export interface Album {
+export interface MostLoved {
   idAlbum: string;
   idArtist: string;
   idLabel: string | null;

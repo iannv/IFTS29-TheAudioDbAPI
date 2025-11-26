@@ -13,17 +13,40 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Navbar {
   searchTerm: string = '';
+  errorMessage: string = '';
 
   constructor(private artistaService: ArtistaService,private router: Router) {}
 
   search(): void {
-    console.log("presionado con : " + this.searchTerm)
-    if (this.searchTerm.trim()) {
-      this.artistaService.buscarArtista(this.searchTerm).subscribe((response: ArtistResponse) => {
-        this.router.navigate(['/artista', response.artists[0].idArtist]);
-      });
-    } else {
-      console.log('El término de búsqueda está vacío.');
+    if (!this.searchTerm.trim()) {
+      return;
+    }
+
+    this.errorMessage = '';
+  
+    console.log("Buscando artista:", this.searchTerm);
+  
+    this.artistaService.buscarArtista(this.searchTerm).subscribe({
+      next: (response: ArtistResponse) => {
+        if (response.artists && response.artists.length > 0) {
+          const id = response.artists[0].idArtist;
+          this.router.navigate(['/artista', id]);
+          
+          this.searchTerm = ''; 
+        } else {
+          console.log('No se encontró el artista');
+          this.errorMessage = 'No encontramos ningún artista con ese nombre.';
+        }
+      },
+      error: (err) => {
+        console.error('Error al conectar con la API:', err);
+      }
+    });
+  }
+
+  limpiarError(): void {
+    if (this.errorMessage) {
+      this.errorMessage = '';
     }
   }
 }

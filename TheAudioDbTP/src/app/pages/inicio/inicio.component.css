@@ -22,7 +22,7 @@ section:first-of-type div {
 .section-top h1,
 .section-top p {
     color: var(--blanco);
-    margin-left: 5rem;
+    margin-left: 3rem;
 }
 
 h1 {

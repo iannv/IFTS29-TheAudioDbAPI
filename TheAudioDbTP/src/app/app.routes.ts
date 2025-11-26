@@ -5,6 +5,7 @@ import { Artistas } from './pages/artistas/artistas.component';
 import { Albumes } from './pages/albumes/albumes.component';
 import { NotFound } from './pages/not-found/not-found';
 
+
 export const routes: Routes = [
   // Inicio
   { path: '', component: Inicio },
@@ -16,8 +17,8 @@ export const routes: Routes = [
 
   // Albumes
   { path: 'albumes', component: Albumes },
-  { path: 'albumes/:id', component: Albumes },
+  { path: 'albumes/:artistId/:albumId', component: Albumes },
 
-  // Not Found
-  { path: '**', component: NotFound },
+    // Not Found
+    { path: '**', component: NotFound },
 ];

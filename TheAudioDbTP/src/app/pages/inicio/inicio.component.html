@@ -54,12 +54,21 @@
                     @for (trending of listaTrending; track $index) {
                     <div class="div-trendings">
                         <div>
-                            <a routerLink="" id="trendingLink">
+                            <a
+                                [routerLink]="['/albumes', trending.idArtist, trending.idAlbum]"
+                                id="trendingLink"
+                            >
                                 <img src="{{trending.strAlbumThumb}}" alt="{{trending.strAlbum}}">
                             </a>
                         </div>
                         <div>
-                            <h3>{{trending.strAlbum}}</h3>
+                            <h3>
+                                <a
+                                [routerLink]="['/albumes', trending.idArtist, trending.idAlbum]"
+                                >
+                                {{trending.strAlbum}}
+                                </a>
+                            </h3>
                             <a routerLink="">
                                 <p>{{trending.strArtist}}</p>
                             </a>
