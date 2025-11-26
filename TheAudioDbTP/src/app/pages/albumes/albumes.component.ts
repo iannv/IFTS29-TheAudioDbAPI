@@ -12,10 +12,10 @@ import { TrendingService } from '../../services/trending.service';
 import { MostLovedService } from '../../services/mostLoved.service';
 
 @Component({
-  selector: 'app-albumes',
+  selector: 'app-albumes.component',
   imports: [CommonModule, RouterLink, AlbumComponent],
-  templateUrl: './albumes.html',
-  styleUrl: './albumes.css',
+  templateUrl: './albumes.component.html',
+  styleUrl: './albumes.component.css',
 })
 export class Albumes implements OnInit, OnDestroy {
   public album?: Album;

@@ -4,10 +4,10 @@ import { Album } from '../../interfaces/album.interface';
 import { Track } from '../../interfaces/track.interface';
 
 @Component({
-  selector: 'app-album-component',
+  selector: 'app-album-detalle',
   imports: [CommonModule],
-  templateUrl: './album-component.html',
-  styleUrl: './album-component.css',
+  templateUrl: './album-detalle.component.html',
+  styleUrl: './album-detalle.component.css',
 })
 export class AlbumComponent {
   @Input() album?: Album;

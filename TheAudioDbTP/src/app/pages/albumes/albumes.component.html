@@ -1,13 +1,13 @@
 <div class="div-albumes body-margin-top">
   <!-- Vista detalle de un álbum -->
   <ng-container *ngIf="hasRouteParams">
-    <app-album-component
+    <app-album-detalle
       [album]="album"
       [tracks]="tracks"
       [loadingAlbum]="isLoadingAlbum"
       [loadingTracks]="isLoadingTracks"
       [errorMessage]="albumErrorMessage"
-    ></app-album-component>
+    ></app-album-detalle>
   </ng-container>
 
   <!-- Vista selección de álbumes -->
