@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ArtistaService } from '../../services/artista';
 import {ArtistResponse} from '../../interfaces/artist.interface';
-import { AlbumResponse } from '../../interfaces/album.interface';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -16,8 +15,7 @@ export class Navbar {
   searchTerm: string = '';
   errorMessage: string = '';
 
-  constructor(private artistaService: ArtistaService,
-    private router: Router) {}
+  constructor(private artistaService: ArtistaService,private router: Router) {}
 
   search(): void {
     if (!this.searchTerm.trim()) {
