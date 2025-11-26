@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-tracks',
@@ -14,7 +15,7 @@ export class TopTracksComponent implements OnInit {
   @Input() artistName!: string;
   top3: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.cargarTopTracks();
@@ -41,5 +42,9 @@ export class TopTracksComponent implements OnInit {
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
   return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+verAlbum(track: any) {
+  this.router.navigate(['/albumes', track.idArtist, track.idAlbum]);
 }
 }

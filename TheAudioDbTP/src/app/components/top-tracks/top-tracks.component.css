@@ -1,4 +1,3 @@
-
 .top-tracks-container {
   background-color: #1e1e1e;
   padding: 1rem;
@@ -15,8 +14,8 @@
 
 .track-card:hover {
   transform: scale(1.02);
+  cursor: pointer;
 }
-
 
 .track-thumb {
   width: 80px;
@@ -24,7 +23,6 @@
   border-radius: 6px;
   object-fit: cover;
 }
-
 
 @media (min-width: 768px) {
   .track-card {
