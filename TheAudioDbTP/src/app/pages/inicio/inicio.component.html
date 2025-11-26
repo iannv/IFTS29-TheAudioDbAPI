@@ -12,8 +12,7 @@
         <article id="articleArtistas">
             @for (artista of listaArtistas; track $index) {
             <div>
-                <!-- Cambiar por la ruta del id del artista -->
-                <a routerLink="/artistas">
+                <a routerLink="/artista/{{artista.idArtist}}">
                     <img src="{{artista.strArtistThumb}}" alt="{{artista.strArtist}}">
                     <p>{{artista.strArtist}}</p>
                 </a>
@@ -36,7 +35,7 @@
                     </div>
                     <div>
                         <h3>{{track.strTrack}}</h3>
-                        <a routerLink="">
+                        <a routerLink="/artista/{{track.idArtist}}">
                             <p>{{track.strArtist}}</p>
                         </a>
                         <span>Vistas: {{track.intMusicVidViews}}</span>
@@ -69,7 +68,7 @@
                                 {{trending.strAlbum}}
                                 </a>
                             </h3>
-                            <a routerLink="">
+                            <a routerLink="/artista/{{trending.idArtist}}">
                                 <p>{{trending.strArtist}}</p>
                             </a>
                         </div>
