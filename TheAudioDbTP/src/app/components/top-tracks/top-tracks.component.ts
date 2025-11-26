@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
@@ -18,6 +18,12 @@ export class TopTracksComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarTopTracks();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['artistName'] && this.artistName) {
+      this.cargarTopTracks();
+    }
   }
 
   cargarTopTracks() {
