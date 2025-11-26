@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Artist } from '../../interfaces/artist.interface';
 import { ArtistaService } from '../../services/artista.service';
 import { ActivatedRoute } from '@angular/router';
-import { YoutubePlayerComponent } from 'ngx-youtube-player';
 import { CommonModule } from '@angular/common';
-
+import { YoutubePlayerComponent } from '../youtube-player/youtube-player.component';
+import { TopTracksComponent } from '../top-tracks/top-tracks.component';
 @Component({
   selector: 'app-detalle-detalle',
-  imports: [YoutubePlayerComponent, CommonModule],
+  imports: [YoutubePlayerComponent, CommonModule,TopTracksComponent],
   templateUrl: './artista-detalle.component.html',
   styleUrl: './artista-detalle.component.css',
   standalone: true

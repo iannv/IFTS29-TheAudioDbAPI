@@ -10,17 +10,18 @@
             <div class="card mb-3 fondo" style="max-width: 800px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src={{artista.strArtistThumb}} class="img-fluid rounded-start" alt="foto artista">
+                        <img src="{{artista.strArtistThumb}}" class="img-fluid rounded-start" alt="foto artista">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-white">{{artista.strArtist}}</h5>
-                            <p class="card-text text-white ">{{artista.strBiographyES}}</p>
+                            <p class="card-text text-white">{{artista.strBiographyES}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="col-6 d-flex justify-content-center">
             <youtube-player
                 *ngIf="video"
@@ -29,6 +30,12 @@
                 [width]="640"
                 [height]="360">
             </youtube-player>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <app-top-tracks [artistName]="artista.strArtist"></app-top-tracks>
         </div>
     </div>
 </div>
