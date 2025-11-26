@@ -1,3 +1,61 @@
 <div class="div-albumes body-margin-top">
-    <p>albumes works!</p>
+  <!-- Vista detalle de un álbum -->
+  <ng-container *ngIf="hasRouteParams">
+    <app-album-component
+      [album]="album"
+      [tracks]="tracks"
+      [loadingAlbum]="isLoadingAlbum"
+      [loadingTracks]="isLoadingTracks"
+      [errorMessage]="albumErrorMessage"
+    ></app-album-component>
+  </ng-container>
+
+  <!-- Vista exploratoria de álbumes (sin params) -->
+  <section *ngIf="!hasRouteParams" class="albums-explore">
+    <header class="albums-explore__header">
+      <div>
+        <h2>Explorá álbumes en tendencia</h2>
+        <p>Elegí un álbum para ver el detalle y sus canciones.</p>
+      </div>
+    </header>
+
+    <div *ngIf="isLoadingTrending" class="albums-explore__state">
+      Cargando álbumes destacados…
+    </div>
+
+    <div
+      *ngIf="!isLoadingTrending && trendingAlbums.length === 0"
+      class="albums-explore__state albums-explore__state--muted"
+    >
+      No se pudieron cargar álbumes en tendencia. Volvé a intentarlo más tarde.
+    </div>
+
+    <div
+      *ngIf="!isLoadingTrending && trendingAlbums.length > 0"
+      class="albums-grid"
+    >
+      @for (item of trendingAlbums; track $index) {
+        <article class="album-card-mini">
+          <a
+            [routerLink]="['/albumes', item.idArtist, item.idAlbum]"
+            class="album-card-mini__thumb"
+          >
+            <img
+              [src]="item.strAlbumThumb"
+              [alt]="item.strAlbum"
+              loading="lazy"
+            />
+          </a>
+          <div class="album-card-mini__body">
+            <h3>
+              <a [routerLink]="['/albumes', item.idArtist, item.idAlbum]">
+                {{ item.strAlbum }}
+              </a>
+            </h3>
+            <p class="album-card-mini__artist">{{ item.strArtist }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
 </div>

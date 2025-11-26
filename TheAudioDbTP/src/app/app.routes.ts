@@ -15,5 +15,5 @@ export const routes: Routes = [
 
   // Albumes
   { path: 'albumes', component: Albumes },
-  { path: 'albumes/:id', component: Albumes },
+  { path: 'albumes/:artistId/:albumId', component: Albumes },
 ];
