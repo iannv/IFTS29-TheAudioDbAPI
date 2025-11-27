@@ -1,0 +1,91 @@
+<section class="section-top body-margin-top">
+    <div>
+        <h1>Explorá nuevos sonidos, <span>descubrí artistas</span></h1>
+        <p>Información de artistas, álbumes y videos para que explores tu música favorita en un solo lugar.</p>
+    </div>
+</section>
+
+<section class="section-destacados">
+    <div>
+        <h2>Artistas destacados</h2>
+        <p class="section-p">Haz clic en el artista para conocerlo mejor</p>
+        <article id="articleArtistas">
+            @for (artista of listaArtistas; track $index) {
+            <div>
+                <a routerLink="/artista/{{artista.idArtist}}">
+                    <img src="{{artista.strArtistThumb}}" alt="{{artista.strArtist}}">
+                    <p>{{artista.strArtist}}</p>
+                </a>
+            </div>
+            }
+        </article>
+    </div>
+
+    <div id="div-mas-escuchados-ulimos-lanzamientos">
+        <div>
+            <h2>Canciones más escuchadas</h2>
+            <p class="section-p">Las canciones más escuchadas a nivel global</p>
+            <article id="articleTracks">
+                @for (track of listaTracks; track $index) {
+                <div class="div-tracks">
+                    <div>
+                        <a href="{{track.strMusicVid}}" target="_blank" id="trackLink">
+                            <img src="{{track.strTrackThumb}}" alt="portada-track">
+                        </a>
+                    </div>
+                    <div>
+                        <h3>{{track.strTrack}}</h3>
+                        <a routerLink="/artista/{{track.idArtist}}">
+                            <p>{{track.strArtist}}</p>
+                        </a>
+                        <span>Vistas: {{track.intMusicVidViews}}</span>
+                    </div>
+                </div>
+                }
+            </article>
+        </div>
+
+
+        <div>
+            <h2>Últimos lanzamientos</h2>
+            <div id="div-articleTrendings">
+                <article id="articleTrendings">
+                    @for (trending of listaTrending; track $index) {
+                    <div class="div-trendings">
+                        <div>
+                            <a
+                                [routerLink]="['/albumes', trending.idArtist, trending.idAlbum]"
+                                id="trendingLink"
+                            >
+                                <img src="{{trending.strAlbumThumb}}" alt="{{trending.strAlbum}}">
+                            </a>
+                        </div>
+                        <div>
+                            <h3>
+                                <a
+                                [routerLink]="['/albumes', trending.idArtist, trending.idAlbum]"
+                                >
+                                {{trending.strAlbum}}
+                                </a>
+                            </h3>
+                            <a routerLink="/artista/{{trending.idArtist}}">
+                                <p>{{trending.strArtist}}</p>
+                            </a>
+                        </div>
+                    </div>
+                    }
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-bottom">
+    <video autoplay muted loop src="assets/video.mp4"></video>
+    <div class="btn-content">
+        <a routerLink="/artistas">
+            <button class="btn"><img src="assets/musica.png" alt="explorar-artistas">Descrubrí nuevos artistas</button>
+        </a>
+    </div>
+</section>

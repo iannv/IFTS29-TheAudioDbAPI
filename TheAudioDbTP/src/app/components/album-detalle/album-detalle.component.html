@@ -1,0 +1,91 @@
+<section class="album-wrapper">
+  <div *ngIf="loadingAlbum" class="state state-loading">
+    Cargando información del álbum…
+  </div>
+
+  <div *ngIf="!loadingAlbum && errorMessage" class="state state-error">
+    {{ errorMessage }}
+  </div>
+
+  <article *ngIf="!loadingAlbum && !errorMessage && album" class="album-card">
+    <div class="album-card__media">
+      <img
+        *ngIf="album.strAlbumThumb; else albumPlaceholder"
+        [src]="album.strAlbumThumb!"
+        [alt]="album.strAlbum"
+        loading="lazy"
+      />
+      <ng-template #albumPlaceholder>
+        <div class="album-card__placeholder">
+          {{ album.strAlbum.charAt(0) }}
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="album-card__body">
+      <p class="album-card__eyebrow">
+        {{ album.strGenre || 'Género no disponible' }}
+      </p>
+      <h1>{{ album.strAlbum }}</h1>
+      <h2>{{ album.strArtist }}</h2>
+      <p class="album-card__meta">
+        Lanzamiento {{ album.intYearReleased || 'sin fecha' }} ·
+        {{ album.strLabel || 'Sello no informado' }} ·
+        {{ album.strReleaseFormat || 'Formato no disponible' }}
+      </p>
+      <p class="album-card__description" *ngIf="album.strDescriptionEN as desc">
+        {{ desc }}
+      </p>
+      <div class="album-card__tags">
+        <span *ngIf="album.strMood">Mood: {{ album.strMood }}</span>
+        <span *ngIf="album.strTheme">Tema: {{ album.strTheme }}</span>
+        <span *ngIf="album.intScore">Score: {{ album.intScore }}/10</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="tracks-section">
+  <div class="tracks-header">
+    <h3>Canciones del álbum</h3>
+    <p *ngIf="!loadingTracks && tracks?.length">
+      {{ tracks.length }} canciones
+    </p>
+  </div>
+
+  <div *ngIf="loadingTracks" class="state state-loading">
+    Cargando listado de canciones…
+  </div>
+
+  <div *ngIf="!loadingTracks && !tracks?.length" class="state state-muted">
+    No hay canciones disponibles para este álbum.
+  </div>
+
+  <div class="tracks-table" *ngIf="!loadingTracks && tracks?.length">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Título</th>
+          <th>Duración</th>
+          <th>Reproducciones</th>
+          <th>Oyentes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let track of tracks">
+          <td>{{ track.intTrackNumber || '-' }}</td>
+          <td>
+            <div class="track-title">
+              <span>{{ track.strTrack }}</span>
+              <small *ngIf="track.strGenre">{{ track.strGenre }}</small>
+            </div>
+          </td>
+          <td>{{ formatDuration(track.intDuration) }}</td>
+          <td>{{ formatBigNumber(track.intTotalPlays) }}</td>
+          <td>{{ formatBigNumber(track.intTotalListeners) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

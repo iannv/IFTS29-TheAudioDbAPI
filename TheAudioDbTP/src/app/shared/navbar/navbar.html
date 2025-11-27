@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="div-inicio-logo">
+            <a routerLink="inicio" id="theAudioAtlas">
+                <img src="/logo.png" alt="logo">
+                TheAudio<span>Atlas</span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" routerLinkActive="linkActive">
+                    <a class="nav-link" routerLink="inicio">INICIO</a>
+                </li>
+
+                <li class="nav-item" routerLinkActive="linkActive">
+                    <a class="nav-link" routerLink="artistas">ARTISTAS</a>
+                </li>
+
+                <li class="nav-item" routerLinkActive="linkActive">
+                    <a class="nav-link" routerLink="albumes">ALBUMES</a>
+                </li>
+            </ul>
+
+            <form class="d-flex align-items-center" role="search" (ngSubmit)="search()">
+    
+                <div class="input-wrapper me-2">
+                    <input 
+                        class="form-control" 
+                        type="search" 
+                        placeholder="Buscar artista..." 
+                        aria-label="Search"
+                        name="searchTerm" 
+                        [(ngModel)]="searchTerm"
+                        (input)="limpiarError()" 
+                    />
+                    
+                    @if (errorMessage) {
+                        <div class="search-error">{{ errorMessage }}</div>
+                    }
+                    </div>
+            
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>

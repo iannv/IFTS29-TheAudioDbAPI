@@ -1,0 +1,445 @@
+section:first-of-type {
+    background-image: url(../../../../public/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+
+    /* Parallax */
+    background-attachment: fixed;
+    mask-image: linear-gradient(to bottom, var(--negro) 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, var(--negro) 75%, transparent 100%);
+}
+
+section:first-of-type div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.section-top h1,
+.section-top p {
+    color: var(--blanco);
+    margin-left: 3rem;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h1 span {
+    color: var(--naranja);
+}
+
+h3 {
+    font-size: 20px;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.section-top p {
+    font-size: 28px;
+}
+
+/* Top 5 artistas */
+h2,
+.section-p {
+    margin-left: 4rem;
+}
+
+.section-p {
+    color: var(--gris);
+}
+
+.section-destacados {
+    margin-bottom: 0;
+}
+
+.section-destacados #articleArtistas div {
+    margin: 0 auto;
+    max-width: 80vw;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-destacados article {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section-destacados #articleArtistas div {
+    padding: 1rem;
+}
+
+#articleArtistas div:hover {
+    background-color: var(--negro-hover);
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.107);
+}
+
+.section-destacados>div:first-of-type img:first-of-type {
+    width: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.section-destacados #articleArtistas p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.section-destacados>div:last-of-type {
+    padding-top: 5rem;
+    background: linear-gradient(to bottom, var(--negro), black);
+    padding-bottom: 5rem;
+}
+
+#div-mas-escuchados-ulimos-lanzamientos {
+    display: flex;
+    gap: 4rem;
+    background-color: green;
+}
+
+
+/* Tracks */
+.div-tracks {
+    display: flex;
+    padding: 0.5rem;
+}
+
+#articleTracks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    width: 40vw;
+}
+
+#articleTracks div {
+    background-color: var(--negro-hover);
+}
+
+#articleTracks img {
+    width: 80px;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+#trackLink {
+    position: relative;
+    display: inline-block;
+}
+
+#trackLink:hover img {
+    filter: brightness(0.3);
+    transition: .3s ease;
+}
+
+#trackLink::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-image: url(../../../assets/play.png);
+    background-size: cover;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+#trackLink:hover::after {
+    opacity: 1;
+}
+
+#articleTracks h3,
+#articleTracks p,
+#articleTracks span {
+    margin-left: 1rem;
+    margin-bottom: 0;
+}
+
+#articleTracks p,
+#articleTrendings p {
+    font-size: 16px;
+    font-weight: 200;
+    padding: 0;
+}
+
+#articleTracks p:hover,
+#articleTrendings p:hover {
+    text-decoration: underline;
+}
+
+#articleTracks span {
+    font-weight: 300;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+
+/* Últimos lanzamientos */
+#articleTrendings {
+    gap: 0.5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+
+.div-trendings {
+    max-width: 200px;
+}
+
+.div-trendings div {
+    width: 200px;
+    padding: 15px 15px 0px 15px;
+    cursor: pointer;
+}
+
+#articleTrendings div:hover {
+    background-color: var(--negro-hover);
+    border-radius: 8px;
+}
+
+#articleTrendings img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.div-trendings {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section bottom explorar */
+.section-bottom {
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-bottom video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4);
+}
+
+.btn-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.btn-content button {
+    width: 400px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-content img {
+    width: 45px;
+    margin-right: 1rem;
+}
+
+
+/* Efecto banner desvanecer */
+.section-top::after {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom, transparent, var(--negro));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.section-top>div {
+    position: relative;
+    z-index: 3;
+}
+
+.section-destacados {
+    margin-top: -50px;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* QUERIES */
+@media (max-width: 1300px) {
+    .div-trendings div {
+        width: 170px;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos {
+        gap: 0rem;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .section-top p {
+        font-size: 28px;
+    }
+
+    #articleTracks {
+        width: 80vw;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    #articleTrendings {
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .div-trendings div {
+        width: 160px;
+    }
+
+    .section-bottom {
+        height: 400px;
+    }
+
+    .btn-content {
+        margin-top: 180px;
+    }
+
+    .btn-content button {
+        width: 350px;
+        font-size: 20px;
+    }
+
+    .btn-content img {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .section-top p {
+        font-size: 18px;
+    }
+
+    .section-top h1,
+    .section-top p {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .section-destacados>div:last-of-type {
+        padding-bottom: 2rem;
+    }
+
+    .section-destacados>div:first-of-type img:first-of-type {
+        width: 150px;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos {
+        padding-top: 0;
+    }
+
+    #articleTracks {
+        margin: auto;
+        margin-top: 2rem;
+    }
+
+    .section-bottom {
+        height: 300px;
+    }
+
+    .btn-content {
+        margin-top: 120px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    section:first-of-type {
+        height: 80vh;
+    }
+
+    .section-top h1,
+    .section-top p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    h2,
+    .section-p {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .btn-content button {
+        width: 300px;
+        font-size: 18px;
+        height: 60px;
+    }
+
+    .btn-content img {
+        width: 35px;
+    }
+
+    #div-mas-escuchados-ulimos-lanzamientos>div:last-of-type {
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .section-destacados #articleArtistas div {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #articleTrendings {
+        margin: 0 auto;
+        margin-top: 2rem;
+        max-width: 50%;
+    }
+}
+
+
+
+@media (max-width: 375px) {}
