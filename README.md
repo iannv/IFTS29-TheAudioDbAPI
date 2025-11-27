@@ -8,9 +8,9 @@ Este proyecto fue realizado en el marco de la materia **Desarrollo Front End** d
 
 ## 👥 Integrantes del grupo
 
-- *CAeiro, Felicitas*  
+- *Caeiro, Felicitas*  
 - *Nicolini, Guido*  
-- *Spataro, Nicolas*  
+- *Spataro, Matias*  
 - *Vazquez, Ian*
 - *Zenteno, Joaquin Nicolas*
   
