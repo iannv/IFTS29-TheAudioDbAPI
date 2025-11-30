@@ -4,7 +4,7 @@ Aplicación web desarrollada en **Angular 20** que permite explorar artistas, á
 
 Este proyecto fue realizado en el marco de la materia **Desarrollo Front End** de la **Tecnicatura Superior en Desarrollo de Software**.
 
-##[Live Demo](https://the-audio-atlas.netlify.app/)
+🔗 [Live Demo](https://the-audio-atlas.netlify.app/)
 ---
 
 ## 👥 Integrantes del grupo
