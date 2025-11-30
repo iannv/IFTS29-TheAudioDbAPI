@@ -1,9 +1,10 @@
-# 🎵 TheAudioAtlas — Angular 20
+# 🎵 TheAudioAtlas
 
 Aplicación web desarrollada en **Angular 20** que permite explorar artistas, álbumes y tendencias musicales utilizando principalmente la API pública **TheAudioDB**, complementada con datos de **MusicBrainz**.
 
 Este proyecto fue realizado en el marco de la materia **Desarrollo Front End** de la **Tecnicatura Superior en Desarrollo de Software**.
 
+##[Live Demo](https://the-audio-atlas.netlify.app/)
 ---
 
 ## 👥 Integrantes del grupo
